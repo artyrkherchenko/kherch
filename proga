@@ -1,0 +1,8 @@
+var
+  Year, Month, Day: Word;
+begin
+  DecodeDate(Now, Year, Month, Day);
+  ShowMessage('Год - ' + IntToStr(Year) + #13 +
+                         'Месяц - ' + IntToStr(Month) + #13 +
+                         'День - ' + IntToStr(Day));
+end;                       
