@@ -1,0 +1,22 @@
+import random
+
+pack = [[], [], []]
+a, b = 4, 17
+summa = 0
+for i in range(len(pack)):
+    for element in range(5):
+        pack[i].append(random.randint(0, 200))
+pack = pack[0] + pack[1] + pack[2]
+pack[a:b]
+for element in pack:
+    if element % 4 == 0:
+        summa += element
+print(pack, summa)
+
+# оптимизированный код
+
+pack = [[random.randint(0, 200) for i in range(5)], [random.randint(0, 200) for i in range(5)],
+        [random.randint(0, 200) for i in range(5)]]
+pack = pack[0] + pack[1] + pack[2]
+summa = sum(list(filter(lambda x: x % 4 == 0, pack[a:b])))
+print(summa)
